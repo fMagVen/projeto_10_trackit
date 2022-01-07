@@ -9,7 +9,7 @@ export default function History()
         <Main>
         <Header>
             <img src={TrackitLogo} alt="Trackit Logo Small" />
-            <img src={bobesponja} alt="user picture" />
+            <img src={bobesponja} alt="user foto" />
         </Header>
         <TrackLog>
             <div className='title'>Histórico</div>

@@ -2,15 +2,22 @@ import TrackitLogo from '../img/TrackitLogoS.png'
 import bobesponja from '../img/bobesponja.png'
 import Checkmark from '../img/CheckMark.png'
 import {Main, Header, TrackToday, Footer} from './styledToday'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import {useContext} from "react";
+import UserContext from "../contexts/userContext";
 
 export default function Today()
 {
+
+    const {token} = useContext(UserContext)
+    const navigate = useNavigate()
+    console.log(token)
+
     return(
         <Main>
         <Header>
             <img src={TrackitLogo} alt="Trackit Logo Small" />
-            <img src={bobesponja} alt="user picture" />
+            <img src={bobesponja} alt="user foto" />
         </Header>
         <TrackToday>
             <div className='title-percentage'>

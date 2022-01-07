@@ -10,7 +10,7 @@ const LoginScreen = styled.div`
         height: 180px;
         margin-top: 68px;
     }
-    div{
+    form{
         gap: 6px;
         display: flex;
         flex-direction: column;

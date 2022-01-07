@@ -10,7 +10,7 @@ export default function Habits()
         <Main>
         <Header>
             <img src={TrackitLogo} alt="Trackit Logo Small" />
-            <img src={bobesponja} alt="user picture" />
+            <img src={bobesponja} alt="user foto" />
         </Header>
         <MyHabits>
             <div className='my-habits'>
