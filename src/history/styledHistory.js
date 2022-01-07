@@ -18,7 +18,13 @@ img{
 }
 `
 
-const History = styled.div`
+const TrackLog = styled.div`
+margin-top: 70px;
+background-color: #E7E7E7;
+padding: 17px;
+display: flex;
+flex-direction: column;
+gap: 7px;
 .title{
     font-size: 23px;
     color: #126BA5;
@@ -45,4 +51,4 @@ p{
 }
 `
 
-export{Main, Header, History, Footer}
+export{Main, Header, TrackLog, Footer}

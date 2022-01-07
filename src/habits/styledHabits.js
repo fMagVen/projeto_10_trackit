@@ -104,7 +104,7 @@ const MyHabits = styled.div`
             background-color: #52B6FF;
         }
     }
-    .habit{
+    .habit-overview{
         margin: 10px 18px 0;
         width: auto;
         padding: 13px 18px 15px;

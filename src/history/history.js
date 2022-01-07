@@ -1,6 +1,6 @@
 import TrackitLogo from '../img/TrackitLogoS.png'
 import bobesponja from '../img/bobesponja.png'
-import {Main, Header, Footer} from './styledHistory'
+import {Main, Header, TrackLog, Footer} from './styledHistory'
 import {Link} from 'react-router-dom'
 
 export default function History()
@@ -11,10 +11,10 @@ export default function History()
             <img src={TrackitLogo} alt="Trackit Logo Small" />
             <img src={bobesponja} alt="user picture" />
         </Header>
-        <History>
+        <TrackLog>
             <div className='title'>Histórico</div>
             <div className='text'>Em breve você poderá ver o histórico dos seus hábitos aqui!</div>
-        </History>
+        </TrackLog>
         <Footer>
             <Link to={'/habitos'}>
                 <p>Hábitos</p>

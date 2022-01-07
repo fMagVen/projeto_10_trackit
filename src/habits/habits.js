@@ -33,7 +33,7 @@ export default function Habits()
                     <button className='save'>Salvar</button>
                 </div>
             </div>
-            <div className='habit'>
+            <div className='habit-overview'>
                 <div className='title'>
                     <span>Ler 1 capítulo de livro</span>
                     <img src={trash} alt="trash logo" />
