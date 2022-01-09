@@ -24,8 +24,8 @@ img{
 `
 const MyHabits = styled.div`
     background-color: #F2F2F2;
-    margin: 70px 0 0;
-    padding-bottom: 90px;
+    margin-top: 70px;
+    padding-bottom: 100px;
     .my-habits{
         width: 100%;
         height: 70px;
@@ -162,6 +162,11 @@ p{
     font-weight: 400;
     font-size: 18px;
     color: #52B6FF;
+}
+div{
+    width: 91px;
+    height: 91px;
+    margin-top: -50px;
 }
 `
 

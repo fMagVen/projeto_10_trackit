@@ -16,8 +16,9 @@ function App()
     const [habitsToday, setHabitsToday] = useState([])
     const [theHabits, setTheHabits] = useState([])
     const [image, setImage] = useState()
+    const [dayProgress, setDayProgress] = useState(0)
     return(
-        <UserContext.Provider value={{token, setToken, habitsToday, setHabitsToday, image, setImage, theHabits, setTheHabits}}>
+        <UserContext.Provider value={{token, setToken, habitsToday, setHabitsToday, image, setImage, theHabits, setTheHabits, dayProgress, setDayProgress}}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Login/>}></Route>

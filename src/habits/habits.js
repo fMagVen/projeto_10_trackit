@@ -1,6 +1,5 @@
 import {Main, Header, MyHabits, Footer} from './styledHabits'
 import TrackitLogo from '../img/TrackitLogoS.png'
-import bobesponja from '../img/bobesponja.png'
 import trash from '../img/trash.png'
 import {Link} from 'react-router-dom'
 import {useContext, useState} from "react";
@@ -8,10 +7,11 @@ import UserContext from "../contexts/userContext";
 import axios from 'axios'
 import {useEffect} from 'react'
 import Loader from 'react-loader-spinner'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 export default function Habits()
 {
-    const {token, image, theHabits, setTheHabits} = useContext(UserContext)
+    const {token, image, theHabits, setTheHabits, dayProgress} = useContext(UserContext)
     const [showCreateNewHabitWindow, setShowCreateNewHabitWindow] = useState(false)
     const [newHabitName, setNewHabitName] = useState()
     const [loading, setLoading] = useState(false)
@@ -27,7 +27,6 @@ export default function Habits()
         const request = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits', token)
         request.then(response => setTheHabits(response), error => console.log(error))
     },[])
-    console.log(theHabits)
 
     return(
         <Main>
@@ -56,7 +55,19 @@ export default function Habits()
         <Footer>
             <p>Hábitos</p>
             <Link to={'/hoje'}>
-                <img src={bobesponja} alt="Hoje" />
+            <div>
+            <CircularProgressbar
+            value={dayProgress}
+            text={"Hoje"}
+            background
+            backgroundPadding={6}
+            styles={buildStyles({
+            backgroundColor: "#3e98c7",
+            textColor: "#fff",
+            pathColor: "#fff",
+            trailColor: "transparent"
+            })}/>
+            </div>
             </Link>
             <Link to={'/historico'}>
                 <p>Histórico</p>

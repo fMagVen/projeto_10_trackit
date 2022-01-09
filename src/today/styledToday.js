@@ -23,7 +23,7 @@ img{
 }
 `
 const TrackToday = styled.div`
-margin-top: 70px;
+margin: 70px 0 70px;
 background-color: #E5E5E5;
 padding: 28px 17px 28px;
 .title-percentage{
@@ -49,6 +49,7 @@ padding: 28px 17px 28px;
     .habit-check{
         border-radius: 5px;
         padding: 13px;
+        margin-bottom: 10px;
         display: flex;
         background-color: #fff;
         justify-content: space-between;
@@ -64,6 +65,7 @@ padding: 28px 17px 28px;
         }
         .current-streak{
             display: flex;
+            margin-bottom: 2px;
         }
         .max-streak{
             display: flex;
@@ -74,11 +76,19 @@ padding: 28px 17px 28px;
             align-items: center;
             height: 70px;
             width: 70px;
-            background-color: #E7E7E7;
             img{
                 height: 28px;
                 width: 35px;
             }
+        }
+        .false{
+            background-color: #E7E7E7;
+        }
+        .true{
+            background-color: #8FC549;
+        }
+        .text-done{
+            color: #8FC549;
         }
     }
 }`
@@ -97,6 +107,11 @@ p{
     font-weight: 400;
     font-size: 18px;
     color: #52B6FF;
+}
+div{
+    width: 91px;
+    height: 91px;
+    margin-top: -50px;
 }
 `
 

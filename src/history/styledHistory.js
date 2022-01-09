@@ -16,10 +16,15 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 img{
     margin: 0 20px 0;
 }
+.user-pic{
+    height: 51px;
+    width: 51px;
+    border-radius: 98.5px;
+}
 `
 
 const TrackLog = styled.div`
-margin-top: 70px;
+margin: 70px 0 70px;
 background-color: #E7E7E7;
 padding: 17px;
 display: flex;
@@ -48,6 +53,11 @@ p{
     font-weight: 400;
     font-size: 18px;
     color: #52B6FF;
+}
+div{
+    width: 91px;
+    height: 91px;
+    margin-top: -50px;
 }
 `
 
