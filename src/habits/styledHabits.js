@@ -16,10 +16,16 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 img{
     margin: 0 20px 0;
 }
+.user-pic{
+    height: 51px;
+    width: 51px;
+    border-radius: 98.5px;
+}
 `
 const MyHabits = styled.div`
     background-color: #F2F2F2;
-    margin: 70px 0 70px;
+    margin: 70px 0 0;
+    padding-bottom: 90px;
     .my-habits{
         width: 100%;
         height: 70px;
@@ -35,7 +41,7 @@ const MyHabits = styled.div`
         button{
             width: 40px;
             height: 35px;
-            background-color: #52B6FF;
+            background-color: ${props => props.loading ? '#86CCFF' : '#52B6FF'};
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -75,10 +81,17 @@ const MyHabits = styled.div`
             align-items: center;
             border: 1px solid #D5D5D5;
             border-radius: 5px;
-            background-color: #fff;
-            color: #D4D4D4;
+            
             font-size: 20px;
             font-weight: 400;
+        }
+        .true{
+            background-color: #CFCFCF;
+            color: #fff;
+        }
+        .false{
+            background-color: #fff;
+            color: #D4D4D4;
         }
     }
     .save-habit{
@@ -105,7 +118,7 @@ const MyHabits = styled.div`
         }
     }
     .habit-overview{
-        margin: 10px 18px 0;
+        margin: 10px 18px 10px;
         width: auto;
         padding: 13px 18px 15px;
         border-radius: 5px;

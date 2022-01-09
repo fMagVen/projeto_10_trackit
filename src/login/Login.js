@@ -12,7 +12,8 @@ export default function Login()
     const [emailLogin, setEmailLogin] = useState()
     const [passwordLogin, setPasswordLogin] = useState()
     const [loading, setLoading] = useState(false)
-    const { token, setToken } = useContext(UserContext)
+    const {setToken} = useContext(UserContext)
+    const {setImage} = useContext(UserContext)
     const navigate = useNavigate()
 
     function doLogin(e)
@@ -26,18 +27,19 @@ export default function Login()
 
     function success(response)
     {
-        setToken(response.token)
+        setToken({headers: {Authorization: `Bearer ${response.token}`}})
+        setImage(response.image)
         navigate('/hoje')
     }
 
     function error(response)
     {
-        console.log(response)
+        alert('erro')
         setLoading(false)
     }
 
     return(
-        <LoginScreen>
+        <LoginScreen loading={loading}>
             <img src={TrackitLogo} alt="Trackit Logo Large" />
             <form onSubmit={(e) => doLogin(e)}>
                 <input type="email" onChange={(e) => setEmailLogin(e.target.value)} value={emailLogin} placeholder='email' required disabled={loading}/>

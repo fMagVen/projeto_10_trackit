@@ -2,22 +2,25 @@ import TrackitLogo from '../img/TrackitLogoS.png'
 import bobesponja from '../img/bobesponja.png'
 import Checkmark from '../img/CheckMark.png'
 import {Main, Header, TrackToday, Footer} from './styledToday'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useContext} from "react";
 import UserContext from "../contexts/userContext";
+import axios from 'axios'
+import {useEffect} from 'react'
 
 export default function Today()
 {
-
-    const {token} = useContext(UserContext)
-    const navigate = useNavigate()
-    console.log(token)
+    const {token, image, habitsToday, setHabitsToday} = useContext(UserContext)
+    useEffect(() => {
+        const request = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today', token)
+        request.then(response => setHabitsToday(response), error => console.log(error))
+    },[])
 
     return(
         <Main>
         <Header>
             <img src={TrackitLogo} alt="Trackit Logo Small" />
-            <img src={bobesponja} alt="user foto" />
+            <img className='user-pic' src={image} alt="user foto" />
         </Header>
         <TrackToday>
             <div className='title-percentage'>

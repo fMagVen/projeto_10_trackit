@@ -16,6 +16,11 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 img{
     margin: 0 20px 0;
 }
+.user-pic{
+    height: 51px;
+    width: 51px;
+    border-radius: 98.5px;
+}
 `
 const TrackToday = styled.div`
 margin-top: 70px;

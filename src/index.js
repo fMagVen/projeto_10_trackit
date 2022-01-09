@@ -13,9 +13,11 @@ import {useState} from 'react'
 function App()
 {
     const [token, setToken] = useState()
+    const [habitsToday, setHabitsToday] = useState([])
     const [theHabits, setTheHabits] = useState([])
+    const [image, setImage] = useState()
     return(
-        <UserContext.Provider value={{token, setToken, theHabits, setTheHabits}}>
+        <UserContext.Provider value={{token, setToken, habitsToday, setHabitsToday, image, setImage, theHabits, setTheHabits}}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Login/>}></Route>

@@ -30,7 +30,7 @@ export default function SignUp(props)
     }
 
     return(
-        <LoginScreen>
+        <LoginScreen loading={loading}>
             <img src={TrackitLogo} alt="Trackit Logo Large" />
             <form onSubmit={(e) => doSignUp(e)}>
                 <input onChange={(e) => setPasswordSignUp(e.target.value)} value={passwordSignUp} type="password" placeholder='senha' required disabled={loading}/>

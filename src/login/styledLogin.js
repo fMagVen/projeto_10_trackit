@@ -30,9 +30,10 @@ const LoginScreen = styled.div`
     button{
         width: 303px;
         height: 45px;
-        background-color: #52B6FF;
+        background-color: ${props => props.loading ? '#86CCFF' : '#52B6FF'};
         color: #FFFFFF;
         font-weight: 400;
+        font-size: 21px;
         border: none;
         border-radius: 4.63636px;
         margin-bottom: 25px
