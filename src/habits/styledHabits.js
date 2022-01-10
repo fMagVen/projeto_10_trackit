@@ -23,9 +23,9 @@ img{
 }
 `
 const MyHabits = styled.div`
-    background-color: #F2F2F2;
     margin-top: 70px;
     padding-bottom: 100px;
+    background-color: #E5E5E5;
     .my-habits{
         width: 100%;
         height: 70px;

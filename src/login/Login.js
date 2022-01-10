@@ -9,8 +9,8 @@ import UserContext from "../contexts/userContext";
 
 export default function Login()
 {
-    const [emailLogin, setEmailLogin] = useState()
-    const [passwordLogin, setPasswordLogin] = useState()
+    const [emailLogin, setEmailLogin] = useState('')
+    const [passwordLogin, setPasswordLogin] = useState('')
     const [loading, setLoading] = useState(false)
     const {setPersistImageToken, token} = useContext(UserContext)
     const navigate = useNavigate()

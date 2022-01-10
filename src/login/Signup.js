@@ -8,10 +8,10 @@ import {useState} from 'react'
 
 export default function SignUp(props)
 {
-    const [emailSignUp, setEmailSignUp] = useState()
-    const [passwordSignUp, setPasswordSignUp] = useState()
-    const [name, setName] = useState()
-    const [pic, setPic] = useState()
+    const [emailSignUp, setEmailSignUp] = useState('')
+    const [passwordSignUp, setPasswordSignUp] = useState('')
+    const [name, setName] = useState('')
+    const [pic, setPic] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 

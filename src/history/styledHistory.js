@@ -25,7 +25,6 @@ img{
 
 const TrackLog = styled.div`
 margin: 70px 0 70px;
-background-color: #E7E7E7;
 padding: 17px;
 display: flex;
 flex-direction: column;

@@ -24,8 +24,8 @@ img{
 `
 const TrackToday = styled.div`
 margin: 70px 0 70px;
+padding: 28px 17px 98px;
 background-color: #E5E5E5;
-padding: 28px 17px 28px;
 .title-percentage{
     display: flex;
     flex-direction: column;
