@@ -15,7 +15,7 @@ export default function Login()
     const {setPersistImageToken, token} = useContext(UserContext)
     const navigate = useNavigate()
 
-    useEffect(() => {if(token !== undefined) navigate('/hoje')})
+    useEffect(() => {if(token !== null) navigate('/hoje')})
 
     function doLogin(e)
     {

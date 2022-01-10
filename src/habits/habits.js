@@ -48,8 +48,9 @@ export default function Habits()
             setNewHabitDays={setNewHabitDays}
             setTheHabits={setTheHabits}
             loading={loading}
-            setLoading={setLoading}/>
-            <ShowHabitsFunction habitProp={theHabits} setTheHabits={setTheHabits} setLoading={setLoading}/>
+            setLoading={setLoading}
+            token={token}/>
+            <ShowHabitsFunction habitProp={theHabits} setTheHabits={setTheHabits} setLoading={setLoading} token={token}/>
         </MyHabits>
         <Footer>
             <p>Hábitos</p>
