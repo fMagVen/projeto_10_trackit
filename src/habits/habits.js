@@ -11,7 +11,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 export default function Habits()
 {
-    const {token, image, theHabits, setTheHabits, dayProgress} = useContext(UserContext)
+    const {image, token, theHabits, setTheHabits, dayProgress} = useContext(UserContext)
     const [showCreateNewHabitWindow, setShowCreateNewHabitWindow] = useState(false)
     const [newHabitName, setNewHabitName] = useState()
     const [loading, setLoading] = useState(false)
@@ -46,11 +46,10 @@ export default function Habits()
             setNewHabitName={setNewHabitName}
             newHabitDays={newHabitDays}
             setNewHabitDays={setNewHabitDays}
-            token={token}
             setTheHabits={setTheHabits}
             loading={loading}
             setLoading={setLoading}/>
-            <ShowHabitsFunction habitProp={theHabits} token={token} setTheHabits={setTheHabits} setLoading={setLoading}/>
+            <ShowHabitsFunction habitProp={theHabits} setTheHabits={setTheHabits} setLoading={setLoading}/>
         </MyHabits>
         <Footer>
             <p>Hábitos</p>

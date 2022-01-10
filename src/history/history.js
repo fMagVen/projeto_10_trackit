@@ -7,7 +7,7 @@ import UserContext from "../contexts/userContext";
 
 export default function History()
 {
-    const {token, image, dayProgress} = useContext(UserContext)
+    const {image, dayProgress} = useContext(UserContext)
     return(
         <Main>
         <Header>

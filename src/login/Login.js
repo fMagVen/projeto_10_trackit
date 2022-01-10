@@ -1,7 +1,7 @@
 import {LoginScreen} from './styledLogin'
 import TrackitLogo from '../img/TrackitLogoL.png'
 import {Link, useNavigate} from 'react-router-dom'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Loader from 'react-loader-spinner'
 import axios from 'axios'
 import {useContext} from "react";
@@ -12,9 +12,10 @@ export default function Login()
     const [emailLogin, setEmailLogin] = useState()
     const [passwordLogin, setPasswordLogin] = useState()
     const [loading, setLoading] = useState(false)
-    const {setToken} = useContext(UserContext)
-    const {setImage} = useContext(UserContext)
+    const {setPersistImageToken, token} = useContext(UserContext)
     const navigate = useNavigate()
+
+    useEffect(() => {if(token !== undefined) navigate('/hoje')})
 
     function doLogin(e)
     {
@@ -27,8 +28,7 @@ export default function Login()
 
     function success(response)
     {
-        setToken({headers: {Authorization: `Bearer ${response.token}`}})
-        setImage(response.image)
+        setPersistImageToken(response.image, response.token)
         navigate('/hoje')
     }
 
@@ -37,7 +37,7 @@ export default function Login()
         alert('erro')
         setLoading(false)
     }
-
+    
     return(
         <LoginScreen loading={loading}>
             <img src={TrackitLogo} alt="Trackit Logo Large" />

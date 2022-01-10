@@ -15,7 +15,7 @@ export default function Today()
 {
     
     let todayDate = dayjs().locale('pt-br').format('dddd, DD/MM')
-    const {token, image, habitsToday, setHabitsToday, dayProgress, setDayProgress} = useContext(UserContext)
+    const {image, token, habitsToday, setHabitsToday, dayProgress, setDayProgress} = useContext(UserContext)
     useEffect(() => {
         const request = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today', token)
         request.then(response => setHabitsToday(response.data), error => console.log(error))
@@ -39,17 +39,17 @@ export default function Today()
 
     function setHabitDone(id, done){
         if(!done){
-            const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`, {}, token)
+            const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`, {}, JSON.parse(localStorage.getItem("localToken")))
             request.then(() => reloadHabitsToday(), error => console.log(error))
         }
         else{
-            const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`, {}, token)
+            const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`, {}, JSON.parse(localStorage.getItem("localToken")))
             request.then(() => reloadHabitsToday(), error => console.log(error))
         }
     }
 
     function reloadHabitsToday(){
-        const request = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today', token)
+        const request = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today', JSON.parse(localStorage.getItem("localToken")))
         request.then(response => setHabitsToday(response.data), error => console.log(error))
     }
 
@@ -71,11 +71,11 @@ export default function Today()
                         <div className='name'>{item.name}</div>
                         <div className='current-streak'>
                             <div>Sequência atual:  &nbsp;</div>
-                            <div className={item.done && 'text-done'}>{item.currentSequence} {item.currentSequence > 1 ? 'dias' : 'dia'}</div>
+                            <div className={item.done ? 'text-done' : undefined}>{item.currentSequence} {item.currentSequence > 1 ? 'dias' : 'dia'}</div>
                         </div>
                         <div className='max-streak'>
                             <div>Seu recorde:  &nbsp;</div>
-                            <div className={item.highestSequence === item.currentSequence && item.highestSequence > 0 && 'text-done'}>{item.highestSequence} {item.currentSequence > 1 ? 'dias' : 'dia'}</div>
+                            <div className={item.highestSequence === item.currentSequence && item.highestSequence > 0 ? 'text-done' : undefined}>{item.highestSequence} {item.currentSequence > 1 ? 'dias' : 'dia'}</div>
                         </div>
                     </div>
                     <div onClick={() => setHabitDone(item.id, item.done)} className={`checkmark ${item.done}`}>
